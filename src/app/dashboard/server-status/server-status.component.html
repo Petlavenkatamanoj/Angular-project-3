@@ -1,4 +1,17 @@
- <article>
-        
-       
- </article>
+<div [class]="{
+    status:true,
+    'status-online':currentStatus==='online',
+    'status-offline':currentStatus==='offline',
+    'status-unknown':currentStatus==='unknown'
+}">
+@if(currentStatus==='online'){
+    <p>Server are online</p>
+    <p>All Systems are operational.</p>
+}@else if(currentStatus==='offline'){
+    <p>Server are offline</p>
+    <p>Functionality should not be store</p>
+}@else{
+    <p>Server status is unknown</p>
+    <p>Fetching server status failed</p>
+}
+</div>
