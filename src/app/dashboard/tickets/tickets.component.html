@@ -1,5 +1,11 @@
 <article> 
         <div id="new-ticket">
-            <app-new-ticket />
+            <app-new-ticket  (sendData)="addFunction($event)"/>
         </div>
+        <div *ngFor="let arr of array; let i = index">
+         <h3>Ticket {{ i + 1 }}</h3>
+        <p><strong>Title:</strong> {{ arr.text }}</p>
+         <p><strong>Request:</strong> {{ arr.textarea }}</p>
+         <hr />
+       </div>
 </article>
